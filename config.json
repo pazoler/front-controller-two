@@ -1,0 +1,19 @@
+{
+  "urls": {
+    "main": {
+      "path": "/",
+      "controller": "Ifmo\\Web\\Controllers\\IndexController::indexAction",
+      "method": "GET"
+    },
+    "show books": {
+      "path": "/books",
+      "controller": "Ifmo\\Web\\Controllers\\BooksController::indexAction",
+      "method": "GET"
+    },
+    "show book": {
+      "path": "/books/show/{id:\\d+}",
+      "controller": "Ifmo\\Web\\Controllers\\BooksController::showAction",
+      "method": "GET"
+    }
+  }
+}

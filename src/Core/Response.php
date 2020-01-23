@@ -30,6 +30,12 @@ class Response
         return $this;
     }
 
+    public function send(){
+        $this->sendBody();
+        return $this;
+    }
 
-
+    private function sendBody(){
+        echo $this->body;
+    }
 }

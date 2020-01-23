@@ -17,8 +17,11 @@ require_once __DIR__ . '/../vendor/autoload.php';
 //    $controller->indexAction();
 //}
 //Ifmo\Web\Core\Router::run();
+$request = new \Ifmo\Web\Core\Request();
+
 $config = __DIR__ . '/../config.json';
-$config = json_decode(
-    file_get_contents($config), true);
-var_dump($config['urls']);
-//composer
+
+$app = new \Ifmo\Web\Core\Application($config);
+$response = $app->handleRequest($request);
+$response->send();
+

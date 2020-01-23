@@ -28,3 +28,4 @@ class Router
         return $dispatcher->dispatch($httpMethod, $uri);
     }
 }
+

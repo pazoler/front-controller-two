@@ -7,3 +7,7 @@ Response
 DB
 Session
 Cookie
+
+composer init инициализация пакета -> composer.json
+composer dump-autoload
+composer update - для загрузки всех необходимых библиотек

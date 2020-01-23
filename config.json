@@ -15,5 +15,12 @@
       "controller": "Ifmo\\Web\\Controllers\\BooksController::showAction",
       "method": "GET"
     }
+  },
+  "db": {
+    "server": "127.0.0.1",
+    "dbname": "mysql_lessons",
+    "user": "ifmo",
+    "pass": "ifmo",
+    "charset": "utf8"
   }
 }

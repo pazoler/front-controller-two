@@ -27,6 +27,8 @@ class Application
     // метод создания ответа (объекта Response) на основе запроса (объекта Request)
     public function handleRequest(Request $request){
         $router = new Router($this->config['urls']); // создание объекта Router
+        $db = DBConnection::getInstance();
+        $db->initConnection($this->config['db']);
         // вызом метода dispatch. Метод принимает на вход метод запроса (REQUEST_METHOD) и строку запроса (REQUEST_URI)
         // метод возвращает информацию массивом, в котором содержится обработчик данного запроса (контроллер и его метод)
         // или информация о том, что реакция на данный запрос на описана в config файле

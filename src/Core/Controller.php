@@ -8,7 +8,7 @@ class Controller
     // или возвращает null, если роутер определил, что данный запрос не обрабатывается сервером
     public static function create(array $routeInfo){
         $controllerData = null;
-        var_dump($routeInfo);
+//        var_dump($routeInfo);
         switch ($routeInfo[0]){
             case 0:
                 var_dump("404 NOT FOUND");

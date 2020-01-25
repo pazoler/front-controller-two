@@ -17,6 +17,7 @@ class Response
             ->setStatusCode($statusCode);
     }
 
+    // установка значения тело ответа
     public function setBody($body){
         $this->body = $body;
         return $this;
@@ -30,12 +31,14 @@ class Response
         return $this;
     }
 
+    // отправка ответа клиенту
     public function send(){
         $this->sendBody();
         return $this;
     }
 
+    // отправка тела запроса
     private function sendBody(){
-        echo $this->body;
+        echo $this->body; // вывод значения body на экран
     }
 }

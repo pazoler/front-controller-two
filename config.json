@@ -6,13 +6,13 @@
       "method": "GET"
     },
     "show books": {
-      "path": "/books",
-      "controller": "Ifmo\\Web\\Controllers\\BooksController::indexAction",
+      "path": "/articles",
+      "controller": "Ifmo\\Web\\Controllers\\ArticleController::indexAction",
       "method": "GET"
     },
     "show book": {
-      "path": "/books/show/{id:\\d+}",
-      "controller": "Ifmo\\Web\\Controllers\\BooksController::showAction",
+      "path": "/articles/{id:\\d+}",
+      "controller": "Ifmo\\Web\\Controllers\\ArticleController::showAction",
       "method": "GET"
     }
   },

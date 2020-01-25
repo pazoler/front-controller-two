@@ -3,6 +3,9 @@ namespace Ifmo\Web\Core;
 
 class Controller
 {
+    // метод на основе полученной от роутера информации формирует массив,
+    // содержащий объект контроллера, имя метода - обработчик запроса, параметры запроса
+    // или возвращает null, если роутер определил, что данный запрос не обрабатывается сервером
     public static function create(array $routeInfo){
         $controllerData = null;
         var_dump($routeInfo);
@@ -26,6 +29,8 @@ class Controller
 
     }
 
+    // метод создает ответ (объект Response), устанавливает тело ответа (body)
+    // и возвращает сформированный объект
     protected function
     generateResponse($content, array $data,
                      $template = 'template.php'){
@@ -37,6 +42,9 @@ class Controller
         return $response;
     }
 
+    // метод принимает на вход html шаблон, html с основным содержимым
+    // и данные, которыне необходимо передать в html
+    // возвращает сгенерированную html страницу
     private function render_page($content,
                                 array $data,
                                 $template)

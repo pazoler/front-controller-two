@@ -7,7 +7,7 @@ class IndexController extends Controller
 {
     public function indexAction()
     {
-        $content = 'main.php';
+        $content = 'main/main.php';
         $data = [
             'page_title'=>'Главная'
         ];

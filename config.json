@@ -29,6 +29,11 @@
       "path": "/account",
       "controller": "Ifmo\\Web\\Controllers\\AccountController::accountAction",
       "method": "GET"
+    },
+    "add article": {
+      "path": "/article/add",
+      "controller": "Ifmo\\Web\\Controllers\\ArticleController::addAction",
+      "method": "POST"
     }
   },
   "db": {

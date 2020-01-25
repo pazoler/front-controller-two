@@ -69,5 +69,10 @@ class DBConnection
         return $statement->fetchAll();
     }
 
+    public function executeSql($sql, $params){
+        $statement = $this->connection->prepare($sql);
+        $statement->execute($params);
+    }
+
 
 }

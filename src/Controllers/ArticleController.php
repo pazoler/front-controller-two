@@ -2,14 +2,18 @@
 namespace Ifmo\Web\Controllers;
 
 use Ifmo\Web\Core\Controller;
+use Ifmo\Web\Core\DBConnection;
 use Ifmo\Web\Core\Request;
 use Ifmo\Web\Models\BooksModel;
 
 class ArticleController extends Controller
 {
     private $books_model;
+    private $db_connection;
     public function __construct()
     {
+        $this->db_connection =
+            DBConnection::getInstance();
 //        $this->books_model = new BooksModel();
     }
 
@@ -35,6 +39,19 @@ class ArticleController extends Controller
         ];
         return $this->generateResponse($content, $data);
     }
+
+    public function addAction(Request $request){
+        $data = $request->post();
+        $sql = "INSERT INTO article (title, article_text, user_iduser)
+ VALUES ( :title, :text, :user_iduser)";
+        $params = [
+            "title" => $data['title'],
+            "text" => $data['text'],
+            "user_iduser" => 1
+        ];
+        $this->db_connection->executeSql($sql, $params);
+        header('Location:/account');
+    }
 }
 
-// инициализация пакета - composer init
+

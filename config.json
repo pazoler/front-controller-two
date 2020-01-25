@@ -24,6 +24,11 @@
       "path": "/registration",
       "controller": "Ifmo\\Web\\Controllers\\AccountController::addUser",
       "method": "POST"
+    },
+    "account": {
+      "path": "/account",
+      "controller": "Ifmo\\Web\\Controllers\\AccountController::accountAction",
+      "method": "GET"
     }
   },
   "db": {

@@ -15,5 +15,13 @@ class AccountController extends Controller
         return $this->generateResponse($content, $data);
     }
 
+    public function accountAction(){
+        $content = 'account/account.php';
+        $data = [
+            'page_title'=>'Личный кабинет'
+        ];
+        return $this->generateResponse($content, $data);
+    }
+
 
 }

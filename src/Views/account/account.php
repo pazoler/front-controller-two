@@ -15,14 +15,14 @@
     </div>
     <div class="tab-pane fade show active" id="article" role="tabpanel" aria-labelledby="article-tab">
         <!--        title, article_text, created - default / load pic-->
-        <form>
+        <form method="post" action="/article/add">
             <div class="form-group">
                 <label for="title">Название статьи</label>
-                <input type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="title">
+                <input name="title" type="text" class="form-control" id="email" aria-describedby="emailHelp" placeholder="title">
             </div>
             <div class="form-group">
                 <label for="text">Текст статьи</label>
-                <textarea rows="10" class="form-control" id="text" placeholder="text"></textarea>
+                <textarea name="text" rows="10" class="form-control" id="text" placeholder="text"></textarea>
             </div>
             <div class="form-group">
                 <label for="picture">Загрузить фотографию</label>

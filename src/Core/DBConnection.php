@@ -19,11 +19,11 @@ class DBConnection
         }
         return self::$instance;
     }
-        //"server": "127.0.0.1",
-        //"dbname": "mysql_lessons",
-        //"user": "ifmo",
-        //"pass": "ifmo",
-        //"charset": "utf8"
+
+    public function getConnection(){
+        return $this->connection;
+    }
+
     public function initConnection(array $settings){
         $options = [
             PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,

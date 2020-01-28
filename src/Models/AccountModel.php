@@ -32,6 +32,8 @@ VALUES (:login, :pwd)";
 (address, phone, user_iduser) VALUES (:address, :phone, :user_id)";
         try{
             // начало транзакции
+            $this->db->getConnection()
+                ->beginTransaction();
             $user_params = [
                 'login' => $login,
                 'pwd'=>$pwd
@@ -39,11 +41,18 @@ VALUES (:login, :pwd)";
             $info_params = [
                 'address'=>$user_data['address'],
                 'phone'=>$user_data['phone'],
-//                'user_id'=>
+                'user_id'=> $this->db->getConnection()
+                    ->lastInsertId()
             ];
+            $this->db->executeSql($user_sql, $user_params);
+            $this->db->executeSql($user_info_sql,
+                $info_params);
+
             // подтверждение транзакции
+            $this->db->getConnection()->commit();
         } catch (Exception $e) { // Обработка ошибки
 //           // откат транзакции
+            $this->db->getConnection()->rollBack();
 
         }
     }

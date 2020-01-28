@@ -42,6 +42,12 @@ class Controller
         return $response;
     }
 
+    protected function ajaxResponse($data){
+        $response = new Response();
+        $response->setBody($data);
+        return $response;
+    }
+
     // метод принимает на вход html шаблон, html с основным содержимым
     // и данные, которыне необходимо передать в html
     // возвращает сгенерированную html страницу

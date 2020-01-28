@@ -32,8 +32,19 @@ class AccountController extends Controller
     }
 
     public function addUser(Request $request){
-        $this->account_model->addUser($request->post());
+        $result = $this->account_model
+            ->addUser($request->post());
+        $content = 'account/registration.php';
+        $data = [
+            'page_title'=>'Зарегистрироваться',
+            'result' => $result
+        ];
+        return $this->generateResponse($content, $data);
     }
-
+    public function login(Request $request) {
+        $formData = $request->post();
+        $result = $this->account_model->authorisation($formData);
+        return $this->ajaxResponse($result);
+    }
 
 }

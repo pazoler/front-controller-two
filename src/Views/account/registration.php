@@ -1,3 +1,6 @@
+<? if (isset($result)): ?>
+    <p><? echo $result; ?></p>
+<? endif; ?>
 <h3>Заполните форму регистрации</h3>
 <form method="post" action="/registration">
     <div class="form-group">

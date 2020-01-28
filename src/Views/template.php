@@ -48,15 +48,17 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
+
             <div class="modal-body">
-                <form>
+                <p id="error"></p>
+                <form name="authorisation">
                     <div class="form-group">
                         <label for="login">Ваш логин</label>
-                        <input name="fgsagrsg" type="text" class="form-control" id="login"  placeholder="логин">
+                        <input name="login" type="text" class="form-control" id="login"  placeholder="логин">
                     </div>
                     <div class="form-group">
                         <label for="password">Ваш пароль</label>
-                        <input type="password" class="form-control" id="password" placeholder="пароль">
+                        <input name="pwd" type="password" class="form-control" id="password" placeholder="пароль">
                     </div>
                     <button type="submit" class="btn btn-warning">Войти</button>
                 </form>
@@ -131,6 +133,7 @@
         </div>
     </div>
 </footer>
+<script src="/static/js/authorisation.js"></script>
 
 </body>
 </html>

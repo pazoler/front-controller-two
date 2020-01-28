@@ -34,6 +34,11 @@
       "path": "/article/add",
       "controller": "Ifmo\\Web\\Controllers\\ArticleController::addAction",
       "method": "POST"
+    },
+    "authorisation": {
+      "path": "/login",
+      "controller": "Ifmo\\Web\\Controllers\\AccountController::login",
+      "method": "POST"
     }
   },
   "db": {

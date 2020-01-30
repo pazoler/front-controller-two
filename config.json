@@ -39,6 +39,11 @@
       "path": "/login",
       "controller": "Ifmo\\Web\\Controllers\\AccountController::login",
       "method": "POST"
+    },
+    "logout": {
+      "path": "/logout",
+      "controller": "Ifmo\\Web\\Controllers\\AccountController::logout",
+      "method": "GET"
     }
   },
   "db": {

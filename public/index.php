@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once __DIR__ . '/../vendor/autoload.php';
 
 // клиентские запросы перенаправляются на данную страницу (настройки сервера .htaccess файл)

@@ -30,7 +30,12 @@
             </ul>
             <ul class="navbar-nav ">
                 <li class="nav-item mr-auto">
+                    <? if(isset($_SESSION['login'])): ?>
+                    <a class="btn btn-warning"href="/logout">Выйти</a>
+                    <? else: ?>
+
                     <a class="btn btn-warning" data-toggle="modal" data-target="#modal">Личный кабинет</a>
+                    <? endif; ?>
                 </li>
             </ul>
 

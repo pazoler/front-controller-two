@@ -24,6 +24,9 @@ class AccountController extends Controller
     }
 
     public function accountAction(){
+        if(!isset($_SESSION['login'])) {
+            header('Location: /');
+        }
         $content = 'account/account.php';
         $data = [
             'page_title'=>'Личный кабинет'
@@ -44,7 +47,20 @@ class AccountController extends Controller
     public function login(Request $request) {
         $formData = $request->post();
         $result = $this->account_model->authorisation($formData);
+        if ($result === AccountModel::SUCCESS) {
+            $_SESSION['login'] = $formData['login'];
+        }
         return $this->ajaxResponse($result);
+
     }
+
+    public function logout() {
+        unset($_SESSION['login']);
+        $_SESSION = [];
+        session_destroy();
+        header('Location: /');
+    }
+
+
 
 }

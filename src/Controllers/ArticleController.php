@@ -4,26 +4,29 @@ namespace Ifmo\Web\Controllers;
 use Ifmo\Web\Core\Controller;
 use Ifmo\Web\Core\DBConnection;
 use Ifmo\Web\Core\Request;
-use Ifmo\Web\Models\BooksModel;
+use Ifmo\Web\Models\ArticleModel;
 
 class ArticleController extends Controller
 {
-    private $books_model;
+    private $article_model;
     private $db_connection;
     public function __construct()
     {
         $this->db_connection =
             DBConnection::getInstance();
+        $this->article_model = new ArticleModel();
 //        $this->books_model = new BooksModel();
     }
 
 
     public function indexAction(){
-        $content = 'articles/articles.php';
+        $content = 'main/main.php';
+        $articles = $this->article_model
+            ->getAllArticles();
 //        $books = $this->books_model->getAllBooks();
         $data = [
-            'page_title'=>'Книги',
-//            'all_books'=>$books,
+            'page_title'=>'Статьи',
+            'all_articles'=>$articles,
         ];
 
         return $this->generateResponse($content, $data);
@@ -32,10 +35,12 @@ class ArticleController extends Controller
     public function showAction(Request $request) {
         $id = $request->params()['id'];
         $content = 'articles/article.php';
+        $article = $this->article_model
+            ->getArticleById($id);
 //        $book = $this->books_model->getById($id);
         $data = [
-//            'page_title' => $book['title'],
-//            'book'=>$book
+            'page_title' => $article['title'],
+            'article'=>$article,
         ];
         return $this->generateResponse($content, $data);
     }
